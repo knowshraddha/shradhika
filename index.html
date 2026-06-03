@@ -1,148 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Glamora – Artificial Jewellery</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <title>shRadhika Jewel – Wear Confidence</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
   <!-- Top Banner -->
-  <div class="top-banner">✨ Free Shipping on Orders Above ₹499 | Use Code: GLAMORA10 for 10% Off ✨</div>
+  <div class="top-banner">
+    ✨ Free Shipping on Orders Above ₹499 &nbsp;|&nbsp; Use Code <strong>RADHIKA10</strong> for 10% Off ✨
+  </div>
 
   <!-- Navigation -->
-  <nav>
+  <nav id="navbar">
     <div class="nav-inner">
-      <div class="logo">💎 Glamora</div>
+      <div class="logo-wrap">
+        <img src="logo.png" alt="shRadhika Jewel" class="logo-img"/>
+        <div class="logo-text">
+          <span class="logo-main">sh<span class="logo-accent">Radhika</span></span>
+          <span class="logo-sub">· JEWEL ·</span>
+        </div>
+      </div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#featured">New Arrivals</a></li>
-        <li><a href="#offers">Offers</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#giftbox">Gift Boxes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="icon-btn" onclick="toggleSearch()">🔍</button>
-        <button class="icon-btn" onclick="toggleWishlist()">🤍 <span id="wishlist-count">0</span></button>
-        <button class="icon-btn cart-btn" onclick="toggleCart()">🛒 <span id="cart-count">0</span></button>
+        <button class="icon-btn" onclick="toggleSearch()" title="Search">🔍</button>
+        <button class="icon-btn" onclick="toggleWishlist()" title="Wishlist">🤍 <span id="wishlist-count">0</span></button>
+        <button class="icon-btn cart-btn" onclick="toggleCart()" title="Cart">🛒 <span id="cart-count">0</span></button>
       </div>
     </div>
     <div class="search-bar" id="searchBar">
-      <input type="text" id="searchInput" placeholder="Search for necklaces, earrings, bangles..." oninput="filterProducts()" />
+      <input type="text" id="searchInput" placeholder="Search rings, earrings, bracelets..." oninput="filterProducts()"/>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <p class="hero-subtitle">New Collection 2026</p>
-      <h1>Shine Bright,<br/>Spend Less</h1>
-      <p class="hero-desc">Discover stunning artificial jewellery that looks real. Elegant designs for every occasion — weddings, parties, daily wear & more.</p>
+      <p class="hero-tag">✦ Handpicked Artificial Jewellery</p>
+      <h1>Wear Confidence,<br/>Wear <em>shRadhika</em></h1>
+      <p class="hero-desc">Beautiful pieces for every mood — daily wear, office, college, and traditional occasions. Elegant. Affordable. Yours.</p>
       <div class="hero-btns">
-        <a href="#featured" class="btn-primary">Shop Now</a>
-        <a href="#categories" class="btn-ghost">Explore Collections</a>
+        <a href="#shop" class="btn-primary">Shop Now</a>
+        <a href="#giftbox" class="btn-ghost">🎁 Gift Boxes</a>
+      </div>
+      <div class="hero-pills">
+        <span>🚚 Free shipping ₹499+</span>
+        <span>↩️ Easy returns</span>
+        <span>💯 Quality assured</span>
       </div>
     </div>
-    <div class="hero-image">
-      <div class="hero-badge">💍</div>
-      <div class="floating-card card1">🌟 Premium Quality</div>
-      <div class="floating-card card2">🚚 Free Delivery</div>
-      <div class="floating-card card3">↩️ Easy Returns</div>
+    <div class="hero-visual">
+      <img src="logo.png" alt="shRadhika Jewel" class="hero-logo-img"/>
     </div>
   </section>
 
-  <!-- Trust Badges -->
-  <section class="trust-bar">
-    <div class="trust-item">🚚 Free Shipping Above ₹499</div>
-    <div class="trust-item">💯 100% Genuine Products</div>
-    <div class="trust-item">↩️ 7-Day Easy Returns</div>
-    <div class="trust-item">🔒 Secure Payment</div>
+  <!-- Category Quick Links -->
+  <section class="cat-strip">
+    <div class="cat-strip-inner">
+      <div class="cat-chip" onclick="filterByCategory('Ring')">💍 Rings</div>
+      <div class="cat-chip" onclick="filterByCategory('Bracelet')">🌸 Bracelets</div>
+      <div class="cat-chip" onclick="filterByCategory('Earring')">✨ Earrings</div>
+      <div class="cat-chip" onclick="filterByCategory('Neckpiece')">📿 Neckpieces</div>
+      <div class="cat-chip" onclick="filterByCategory('HairClip')">🌺 Hair Clips</div>
+      <div class="cat-chip" onclick="scrollToGift()">🎁 Gift Boxes</div>
+    </div>
   </section>
 
-  <!-- Categories -->
-  <section id="categories" class="section">
+  <!-- Shop Section -->
+  <section id="shop" class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Shop by Category</h2>
-        <p>Find the perfect piece for every occasion</p>
+        <h2>Our Collection</h2>
+        <p class="tagline-sub">· Wear Confidence ·</p>
       </div>
-      <div class="categories-grid">
-        <div class="category-card" onclick="filterByCategory('Necklace')"><div class="cat-icon">📿</div><h3>Necklaces</h3><p>Chokers, Chains & Sets</p></div>
-        <div class="category-card" onclick="filterByCategory('Earring')"><div class="cat-icon">✨</div><h3>Earrings</h3><p>Studs, Hoops & Dangles</p></div>
-        <div class="category-card" onclick="filterByCategory('Bangle')"><div class="cat-icon">💛</div><h3>Bangles</h3><p>Gold, Silver & Multicolour</p></div>
-        <div class="category-card" onclick="filterByCategory('Ring')"><div class="cat-icon">💍</div><h3>Rings</h3><p>Statement & Everyday Rings</p></div>
-        <div class="category-card" onclick="filterByCategory('Bracelet')"><div class="cat-icon">🌸</div><h3>Bracelets</h3><p>Charm, Beaded & Cuffs</p></div>
-        <div class="category-card" onclick="filterByCategory('Set')"><div class="cat-icon">🎁</div><h3>Bridal Sets</h3><p>Complete Wedding Jewellery</p></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Featured Products -->
-  <section id="featured" class="section bg-light">
-    <div class="container">
-      <div class="section-header">
-        <h2>New Arrivals</h2>
-        <p>Handpicked pieces for the modern woman</p>
-      </div>
-      <div class="filter-tabs">
+      <!-- Category Tabs -->
+      <div class="filter-tabs" id="mainTabs">
         <button class="tab active" onclick="setTab(this,'All')">All</button>
-        <button class="tab" onclick="setTab(this,'Necklace')">Necklaces</button>
-        <button class="tab" onclick="setTab(this,'Earring')">Earrings</button>
-        <button class="tab" onclick="setTab(this,'Bangle')">Bangles</button>
-        <button class="tab" onclick="setTab(this,'Ring')">Rings</button>
-        <button class="tab" onclick="setTab(this,'Bracelet')">Bracelets</button>
-        <button class="tab" onclick="setTab(this,'Set')">Sets</button>
+        <button class="tab" onclick="setTab(this,'Ring')">💍 Rings</button>
+        <button class="tab" onclick="setTab(this,'Bracelet')">🌸 Bracelets</button>
+        <button class="tab has-sub" onclick="setTab(this,'Earring')">✨ Earrings</button>
+        <button class="tab" onclick="setTab(this,'Neckpiece')">📿 Neckpieces</button>
+        <button class="tab" onclick="setTab(this,'HairClip')">🌺 Hair Clips</button>
       </div>
+
+      <!-- Earring Sub-tabs -->
+      <div class="sub-tabs" id="earringSubTabs" style="display:none">
+        <button class="sub-tab active" onclick="setSubTab(this,'all')">All Earrings</button>
+        <button class="sub-tab" onclick="setSubTab(this,'Regular')">Regular</button>
+        <button class="sub-tab" onclick="setSubTab(this,'Office')">Office / College</button>
+        <button class="sub-tab" onclick="setSubTab(this,'Traditional')">Traditional</button>
+      </div>
+
       <div class="products-grid" id="productsGrid"></div>
     </div>
   </section>
 
-  <!-- Offers Banner -->
-  <section id="offers" class="offers-section">
-    <div class="offer-card offer-gold">
-      <div><h3>Bridal Collection</h3><p>Complete sets starting at ₹999</p><a href="#" onclick="setTab(document.querySelector('.tab'),'Set')" class="btn-white">Shop Now</a></div>
-      <div class="offer-emoji">👰</div>
-    </div>
-    <div class="offer-card offer-rose">
-      <div><h3>Daily Wear Picks</h3><p>Lightweight pieces under ₹299</p><a href="#featured" class="btn-white">Explore</a></div>
-      <div class="offer-emoji">💐</div>
+  <!-- Gift Box Section -->
+  <section id="giftbox" class="section gift-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>🎁 Gift Boxes</h2>
+        <p>Curated jewellery sets — perfect for birthdays, anniversaries & special moments</p>
+      </div>
+      <div class="gift-grid">
+        <div class="gift-card">
+          <div class="gift-ribbon">POPULAR</div>
+          <div class="gift-icon">🎀</div>
+          <h3>Starter Box</h3>
+          <p class="gift-price">₹799</p>
+          <ul class="gift-includes">
+            <li>✦ 1 Pair of Earrings</li>
+            <li>✦ 1 Bracelet</li>
+            <li>✦ 1 Hair Clip</li>
+            <li>✦ Gift Wrapped Box</li>
+          </ul>
+          <p class="gift-note">Perfect for casual gifting</p>
+          <button class="btn-primary" onclick="addGiftToCart('Starter Box', 799)">Add to Cart</button>
+        </div>
+        <div class="gift-card featured-gift">
+          <div class="gift-ribbon best">BEST VALUE</div>
+          <div class="gift-icon">💝</div>
+          <h3>Classic Box</h3>
+          <p class="gift-price">₹1,199</p>
+          <ul class="gift-includes">
+            <li>✦ 2 Pairs of Earrings</li>
+            <li>✦ 1 Neckpiece</li>
+            <li>✦ 1 Ring</li>
+            <li>✦ Premium Gift Box</li>
+          </ul>
+          <p class="gift-note">Ideal for birthdays & festivals</p>
+          <button class="btn-primary" onclick="addGiftToCart('Classic Box', 1199)">Add to Cart</button>
+        </div>
+        <div class="gift-card">
+          <div class="gift-ribbon premium">PREMIUM</div>
+          <div class="gift-icon">👑</div>
+          <h3>Premium Box</h3>
+          <p class="gift-price">₹1,999</p>
+          <ul class="gift-includes">
+            <li>✦ 2 Pairs of Earrings</li>
+            <li>✦ 1 Neckpiece</li>
+            <li>✦ 1 Bracelet</li>
+            <li>✦ 1 Ring + Hair Clip</li>
+            <li>✦ Luxury Gift Packaging</li>
+          </ul>
+          <p class="gift-note">For anniversary & special occasions</p>
+          <button class="btn-primary" onclick="addGiftToCart('Premium Box', 1999)">Add to Cart</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="section">
+  <section class="section testimonials-section">
     <div class="container">
-      <div class="section-header"><h2>What Our Customers Say</h2></div>
+      <div class="section-header"><h2>Loved by Our Customers</h2></div>
       <div class="testimonials-grid">
-        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"The necklace I ordered looks absolutely stunning! Can't believe it's artificial jewellery — everyone thinks it's real gold!"</p><div class="reviewer">— Priya S., Mumbai</div></div>
-        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Ordered a bridal set for my sister's wedding. The quality is amazing and delivery was super fast. Will definitely order again!"</p><div class="reviewer">— Anjali M., Delhi</div></div>
-        <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Beautiful earrings at such an affordable price. The packaging was lovely too — perfect for gifting!"</p><div class="reviewer">— Sneha R., Pune</div></div>
+        <div class="t-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"The jhumkas I ordered are absolutely gorgeous! Perfect quality and super fast delivery. Will definitely order again!"</p><span>— Priya S., Mumbai</span></div>
+        <div class="t-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Gifted the Classic Box to my best friend — she loved every piece! Beautiful packaging too."</p><span>— Anjali M., Delhi</span></div>
+        <div class="t-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"shRadhika rings are my daily go-to. Lightweight, trendy and so affordable. Love this brand!"</p><span>— Sneha R., Pune</span></div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section bg-light">
+  <section id="contact" class="section contact-section">
     <div class="container">
-      <div class="section-header"><h2>Contact Us</h2><p>We'd love to hear from you</p></div>
+      <div class="section-header"><h2>Get in Touch</h2><p>We'd love to hear from you</p></div>
       <div class="contact-grid">
         <div class="contact-info">
-          <div class="contact-item">📧 support@glamora.in</div>
-          <div class="contact-item">📞 +91 98765 43210</div>
-          <div class="contact-item">📍 Mumbai, Maharashtra, India</div>
-          <div class="contact-item">🕐 Mon–Sat: 9AM – 7PM</div>
-          <div class="social-links">
-            <a href="#">📘 Facebook</a>
+          <div class="brand-mark">sh<span>Radhika</span> Jewel</div>
+          <p class="brand-tagline">· Wear Confidence ·</p>
+          <div class="c-item">📧 hello@shradhika.in</div>
+          <div class="c-item">📞 +91 98765 43210</div>
+          <div class="c-item">📍 India</div>
+          <div class="c-item">🕐 Mon–Sat: 9AM – 7PM</div>
+          <div class="social-row">
             <a href="#">📸 Instagram</a>
-            <a href="#">🐦 Twitter</a>
+            <a href="#">📘 Facebook</a>
+            <a href="#">▶️ YouTube</a>
           </div>
         </div>
         <form class="contact-form" onsubmit="submitForm(event)">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <input type="text" placeholder="Subject" />
+          <input type="text" placeholder="Your Name" required/>
+          <input type="email" placeholder="Your Email" required/>
+          <input type="text" placeholder="Subject"/>
           <textarea rows="4" placeholder="Your Message" required></textarea>
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
@@ -153,29 +203,54 @@
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-col"><h4>💎 Glamora</h4><p>Premium artificial jewellery for every occasion. Affordable luxury, delivered to your door.</p></div>
-      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#categories">Categories</a></li><li><a href="#featured">New Arrivals</a></li><li><a href="#offers">Offers</a></li></ul></div>
-      <div class="footer-col"><h4>Customer Care</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns & Exchange</a></li><li><a href="#">Size Guide</a></li><li><a href="#">FAQs</a></li></ul></div>
-      <div class="footer-col"><h4>Policies</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Refund Policy</a></li></ul></div>
+      <div class="footer-col">
+        <div class="footer-brand">sh<span>Radhika</span> Jewel</div>
+        <p>Elegant artificial jewellery for every occasion. Crafted with love, delivered with care.</p>
+        <p class="footer-tagline">· Wear Confidence ·</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#shop">Rings</a></li>
+          <li><a href="#shop">Bracelets</a></li>
+          <li><a href="#shop">Earrings</a></li>
+          <li><a href="#shop">Neckpieces</a></li>
+          <li><a href="#shop">Hair Clips</a></li>
+          <li><a href="#giftbox">Gift Boxes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Returns & Exchange</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom">© 2026 Glamora. All rights reserved. Made with 💖</div>
+    <div class="footer-bottom">© 2026 shRadhika Jewel. All rights reserved. Made with 💛</div>
   </footer>
 
-  <!-- Cart Sidebar -->
+  <!-- Overlay -->
   <div class="overlay" id="overlay" onclick="closeAll()"></div>
-  <div class="cart-sidebar" id="cartSidebar">
-    <div class="sidebar-header"><h3>🛒 Your Cart</h3><button onclick="toggleCart()">✕</button></div>
-    <div id="cartItems"></div>
+
+  <!-- Cart Sidebar -->
+  <div class="sidebar" id="cartSidebar">
+    <div class="sidebar-head"><h3>🛒 Your Cart</h3><button onclick="toggleCart()">✕</button></div>
+    <div id="cartItems" class="sidebar-body"></div>
     <div class="cart-footer" id="cartFooter" style="display:none">
       <div class="cart-total">Total: ₹<span id="cartTotal">0</span></div>
-      <button class="btn-primary" onclick="checkout()">Proceed to Checkout</button>
+      <p id="freeShipNote" class="free-ship-note"></p>
+      <button class="btn-primary w-full" onclick="checkout()">Proceed to Checkout</button>
     </div>
   </div>
 
   <!-- Wishlist Sidebar -->
-  <div class="cart-sidebar" id="wishlistSidebar">
-    <div class="sidebar-header"><h3>🤍 Wishlist</h3><button onclick="toggleWishlist()">✕</button></div>
-    <div id="wishlistItems"></div>
+  <div class="sidebar" id="wishlistSidebar">
+    <div class="sidebar-head"><h3>🤍 Wishlist</h3><button onclick="toggleWishlist()">✕</button></div>
+    <div id="wishlistItems" class="sidebar-body"></div>
   </div>
 
   <!-- Toast -->
@@ -183,7 +258,7 @@
 
   <!-- Product Modal -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
-    <div class="product-modal" id="productModal" onclick="event.stopPropagation()">
+    <div class="product-modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div id="modalContent"></div>
     </div>
